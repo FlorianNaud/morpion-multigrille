@@ -31,6 +31,8 @@ function handleStartGame(){
 }
 
 let activeBoard = document.querySelector ('.active');
+let globalBoard = document.querySelector('#global');
+
 let activePlayer = Player1
 
 function handleTurnClick(square){
@@ -47,10 +49,11 @@ function turn(squareId, player){
     activeBoard.getElementsByTagName('td')[squareId].innerText = player;
     let gameWon = checkWin(origBoard[activeBoard.id], player);
     if(gameWon) gameOver(gameWon)
-    // TODO : changer le board
-
-    
-
+    activeBoard.classList.remove('active');
+    mainTableau(squareId,player);
+    let newActiveElement = document.getElementById(squareId);
+    newActiveElement.classList.add('active');
+    activeBoard=document.querySelector('.active');
     if(activePlayer==Player1) {
         activePlayer=Player2
     }
@@ -60,6 +63,109 @@ function turn(squareId, player){
     
 }
 
+function mainTableau(squareId, player){
+    console.log("square " + squareId)
+    console.log("activeBoard " + activeBoard.id)
+    if(activeBoard.id==0){
+        if(squareId==0 || squareId==1 || squareId==2){
+        globalBoard.getElementsByTagName('tr')[0].getElementsByTagName('td')[squareId].innerText = player;
+        }
+        if(squareId==3 || squareId==4 || squareId==5){
+            globalBoard.getElementsByTagName('tr')[1].getElementsByTagName('td')[squareId-3].innerText = player;
+        }
+        if(squareId==6 || squareId==7 || squareId==8){
+            globalBoard.getElementsByTagName('tr')[2].getElementsByTagName('td')[squareId-6].innerText = player;
+        }  
+    }
+    if(activeBoard.id==1){
+        if(squareId==0 || squareId==1 || squareId==2){
+        globalBoard.getElementsByTagName('tr')[0].getElementsByTagName('td')[squareId+3].innerText = player;
+        }
+        if(squareId==3 || squareId==4 || squareId==5){
+            globalBoard.getElementsByTagName('tr')[1].getElementsByTagName('td')[squareId].innerText = player;
+        }
+        if(squareId==6 || squareId==7 || squareId==8){
+            globalBoard.getElementsByTagName('tr')[2].getElementsByTagName('td')[squareId-3].innerText = player;
+        }
+    }
+    if(activeBoard.id==2){
+        if(squareId==0 || squareId==1 || squareId==2){
+            globalBoard.getElementsByTagName('tr')[0].getElementsByTagName('td')[squareId+6].innerText = player;
+        }
+        if(squareId==3 || squareId==4 || squareId==5){
+            globalBoard.getElementsByTagName('tr')[1].getElementsByTagName('td')[squareId+3].innerText = player;
+        }
+        if(squareId==6 || squareId==7 || squareId==8){
+            globalBoard.getElementsByTagName('tr')[2].getElementsByTagName('td')[squareId].innerText = player;
+        }
+    }
+    if(activeBoard.id==3){
+        if(squareId==0 || squareId==1 || squareId==2){
+            globalBoard.getElementsByTagName('tr')[3].getElementsByTagName('td')[squareId].innerText = player;
+        }
+        if(squareId==3 || squareId==4 || squareId==5){
+            globalBoard.getElementsByTagName('tr')[4].getElementsByTagName('td')[squareId-3].innerText = player;
+        }
+        if(squareId==6 || squareId==7 || squareId==8){
+            globalBoard.getElementsByTagName('tr')[5].getElementsByTagName('td')[squareId-6].innerText = player;
+        }
+    }
+    if(activeBoard.id==4){
+        if(squareId==0 || squareId==1 || squareId==2){
+            globalBoard.getElementsByTagName('tr')[3].getElementsByTagName('td')[squareId+3].innerText = player;
+        }
+        if(squareId==3 || squareId==4 || squareId==5){
+            globalBoard.getElementsByTagName('tr')[4].getElementsByTagName('td')[squareId].innerText = player;
+        }
+        if(squareId==6 || squareId==7 || squareId==8){
+            globalBoard.getElementsByTagName('tr')[5].getElementsByTagName('td')[squareId-3].innerText = player;
+        }
+    }
+    if(activeBoard.id==5){
+        if(squareId==0 || squareId==1 || squareId==2){
+            globalBoard.getElementsByTagName('tr')[3].getElementsByTagName('td')[squareId+6].innerText = player;
+        }
+        if(squareId==3 || squareId==4 || squareId==5){
+            globalBoard.getElementsByTagName('tr')[4].getElementsByTagName('td')[squareId+3].innerText = player;
+        }
+        if(squareId==6 || squareId==7 || squareId==8){
+            globalBoard.getElementsByTagName('tr')[5].getElementsByTagName('td')[squareId].innerText = player;
+        }
+    }
+    if(activeBoard.id==6){
+        if(squareId==0 || squareId==1 || squareId==2){
+        globalBoard.getElementsByTagName('tr')[6].getElementsByTagName('td')[squareId].innerText = player;
+        }
+        if(squareId==3 || squareId==4 || squareId==5){
+            globalBoard.getElementsByTagName('tr')[7].getElementsByTagName('td')[squareId-3].innerText = player;
+        }
+        if(squareId==6 || squareId==7 || squareId==8){
+            globalBoard.getElementsByTagName('tr')[8].getElementsByTagName('td')[squareId-6].innerText = player;
+        }
+    }
+    if(activeBoard.id==7){
+        if(squareId==0 || squareId==1 || squareId==2){
+        globalBoard.getElementsByTagName('tr')[6].getElementsByTagName('td')[squareId+3].innerText = player;
+        }
+        if(squareId==3 || squareId==4 || squareId==5){
+            globalBoard.getElementsByTagName('tr')[7].getElementsByTagName('td')[squareId].innerText = player;
+        }
+        if(squareId==6 || squareId==7 || squareId==8){
+            globalBoard.getElementsByTagName('tr')[8].getElementsByTagName('td')[squareId-3].innerText = player;
+        }
+    }
+    if(activeBoard.id==8){
+        if(squareId==0 || squareId==1 || squareId==2){
+        globalBoard.getElementsByTagName('tr')[6].getElementsByTagName('td')[squareId+6].innerText = player;
+        }
+        if(squareId==3 || squareId==4 || squareId==5){
+            globalBoard.getElementsByTagName('tr')[7].getElementsByTagName('td')[squareId+3].innerText = player;
+        }
+        if(squareId==6 || squareId==7 || squareId==8){
+            globalBoard.getElementsByTagName('tr')[8].getElementsByTagName('td')[squareId].innerText = player;
+        }
+    }
+}
 function checkWin(board, player){
     let plays = board.reduce((a,e,i) =>
     (e===player) ? a.concat(i) : a,[]) ;
@@ -92,8 +198,6 @@ function declareWinner (who){
 function emptySquares() {
     let tableauVide = [] ;
     for (i=0; i<origBoard[activeBoard.id].length;i++){
-        
-        console.log (tableauVide);
         if(activeBoard.getElementsByTagName('td')[i].innerHTML == ''){
             tableauVide.push(i);
         }

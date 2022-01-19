@@ -13,6 +13,7 @@ table{
     left : 50%;
     margin-left: -155px;
     top : 5%;
+    display : none;
 }
 
 table tr:first-child td {
@@ -43,33 +44,29 @@ table tr td:last-child {
     color : white ;
     font-size: 2em;
 }
-table#\30{
-    
-}
-table#\31{
-    display: none;
-}
-table#\32{
-    display: none;
-}
-table#\33{
-    display: none;
-}
-table#\34{
-    display: none;
-}
-table#\35{
-    display: none;
-}
-table#\36{
-    display: none;
-}
-table#\37{
-    display: none;
-}
-table#\38{
-    display: none;
-}
+
 #global{
-    display: none;
+    display: block;
+    border-collapse: collapse;
+    position : absolute ;
+    left : 50%;
+    margin-left: -155px;
+    top : 50%;
+}
+#global td {
+    border: 2px solid #333;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    vertical-align: middle;
+    font-size:20px;
+    cursor: grab;
+}
+
+.active {
+    display : block;
+}
+
+.emplacement{
+    background-color: blue ;
 }
