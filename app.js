@@ -14,7 +14,6 @@ const winCombos = [
     [0,4,8],
     [6,4,2]
 ]
-
 const allTableauElement = document.querySelectorAll(".tableau");
 const allTableauCellElement = document.querySelectorAll(".cell");
 
@@ -37,7 +36,9 @@ let activePlayer = Player1
 function handleTurnClick(square){
     let numeroDeCase = parseInt(square.target.classList);
     if((activeBoard.getElementsByTagName('td')[numeroDeCase].innerHTML) != 'O' && activeBoard.getElementsByTagName('td')[numeroDeCase].innerHTML != 'X'){
+        if(!checkTie()){
         turn(parseInt(square.target.classList), activePlayer);
+    }
     }
 }
 
@@ -62,7 +63,6 @@ function turn(squareId, player){
 function checkWin(board, player){
     let plays = board.reduce((a,e,i) =>
     (e===player) ? a.concat(i) : a,[]) ;
-    console.log(plays)
     let gameWon = null ;
     for(let [index, win] of winCombos.entries()){
         if(win.every(elem => plays.indexOf(elem)> -1)){
@@ -90,18 +90,21 @@ function declareWinner (who){
 }
 
 function emptySquares() {
-    return origBoard[activeBoard.id].filter(checkEmpty)
-}
-function checkEmpty(){
-    if((activeBoard.getElementsByTagName('td')[numeroDeCase].innerHTML) != 'O' && activeBoard.getElementsByTagName('td')[numeroDeCase].innerHTML != 'X'){
-        return 
+    let tableauVide = [] ;
+    for (i=0; i<origBoard[activeBoard.id].length;i++){
+        
+        console.log (tableauVide);
+        if(activeBoard.getElementsByTagName('td')[i].innerHTML == ''){
+            tableauVide.push(i);
+        }
     }
+    return tableauVide
 }
 function checkTie(){
-    if(emptySquares().length == 0) {
-        for (var i = 0 ; i< cellElement.length; i++){
-            cellElement[i].style.backgroundColor="green";
-            cellElement[i].removeEventListener('click', handleTurnClick, false);
+    if(emptySquares().length == 1) {
+        for (var i = 0 ; i< allTableauCellElement.length; i++){
+            allTableauCellElement[i].style.backgroundColor="green";
+            allTableauCellElement[i].removeEventListener('click', handleTurnClick, false);
         }
         declareWinner("Tie Game !")
         return true;
