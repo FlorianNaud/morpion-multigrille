@@ -54,6 +54,14 @@ function turn(squareId, player){
     let newActiveElement = document.getElementById(squareId);
     newActiveElement.classList.add('active');
     activeBoard=document.querySelector('.active');
+    let globalTdElement = globalBoard.querySelectorAll('td');
+    console.log(globalTdElement)
+    for(i=0; i<globalTdElement.length;i++){
+        globalTdElement[i].style.backgroundColor='white'
+        }
+
+    colorTableau()
+   
     if(activePlayer==Player1) {
         activePlayer=Player2
     }
@@ -62,10 +70,110 @@ function turn(squareId, player){
     };
     
 }
+function colorTableau(){
+    if(activeBoard.id==0){
+        globalBoard.getElementsByTagName('tr')[0].getElementsByTagName('td')[0].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[0].getElementsByTagName('td')[1].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[0].getElementsByTagName('td')[2].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[1].getElementsByTagName('td')[0].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[1].getElementsByTagName('td')[1].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[1].getElementsByTagName('td')[2].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[2].getElementsByTagName('td')[0].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[2].getElementsByTagName('td')[1].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[2].getElementsByTagName('td')[2].style.backgroundColor = 'blue';
+    }
+    if(activeBoard.id==1){
+        globalBoard.getElementsByTagName('tr')[0].getElementsByTagName('td')[3].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[0].getElementsByTagName('td')[4].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[0].getElementsByTagName('td')[5].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[1].getElementsByTagName('td')[3].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[1].getElementsByTagName('td')[4].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[1].getElementsByTagName('td')[5].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[2].getElementsByTagName('td')[3].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[2].getElementsByTagName('td')[4].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[2].getElementsByTagName('td')[5].style.backgroundColor = 'blue';
+    }
+    if(activeBoard.id==2){
+        globalBoard.getElementsByTagName('tr')[0].getElementsByTagName('td')[6].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[0].getElementsByTagName('td')[7].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[0].getElementsByTagName('td')[8].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[1].getElementsByTagName('td')[6].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[1].getElementsByTagName('td')[7].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[1].getElementsByTagName('td')[8].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[2].getElementsByTagName('td')[6].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[2].getElementsByTagName('td')[7].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[2].getElementsByTagName('td')[8].style.backgroundColor = 'blue';
+    }
+    if(activeBoard.id==3){
+        globalBoard.getElementsByTagName('tr')[3].getElementsByTagName('td')[0].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[3].getElementsByTagName('td')[1].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[3].getElementsByTagName('td')[2].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[4].getElementsByTagName('td')[0].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[4].getElementsByTagName('td')[1].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[4].getElementsByTagName('td')[2].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[5].getElementsByTagName('td')[0].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[5].getElementsByTagName('td')[1].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[5].getElementsByTagName('td')[2].style.backgroundColor = 'blue';
+    }
+    if(activeBoard.id==4){
+        globalBoard.getElementsByTagName('tr')[3].getElementsByTagName('td')[3].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[3].getElementsByTagName('td')[4].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[3].getElementsByTagName('td')[5].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[4].getElementsByTagName('td')[3].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[4].getElementsByTagName('td')[4].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[4].getElementsByTagName('td')[5].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[5].getElementsByTagName('td')[3].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[5].getElementsByTagName('td')[4].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[5].getElementsByTagName('td')[5].style.backgroundColor = 'blue';
+    }
+     if(activeBoard.id==5){
+        globalBoard.getElementsByTagName('tr')[3].getElementsByTagName('td')[6].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[3].getElementsByTagName('td')[7].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[3].getElementsByTagName('td')[8].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[4].getElementsByTagName('td')[6].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[4].getElementsByTagName('td')[7].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[4].getElementsByTagName('td')[8].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[5].getElementsByTagName('td')[6].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[5].getElementsByTagName('td')[7].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[5].getElementsByTagName('td')[8].style.backgroundColor = 'blue';
+    }
+     if(activeBoard.id==6){
+        globalBoard.getElementsByTagName('tr')[6].getElementsByTagName('td')[0].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[6].getElementsByTagName('td')[1].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[6].getElementsByTagName('td')[2].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[7].getElementsByTagName('td')[0].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[7].getElementsByTagName('td')[1].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[7].getElementsByTagName('td')[2].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[8].getElementsByTagName('td')[0].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[8].getElementsByTagName('td')[1].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[8].getElementsByTagName('td')[2].style.backgroundColor = 'blue';
+    }
+    if(activeBoard.id==7){
+        globalBoard.getElementsByTagName('tr')[6].getElementsByTagName('td')[3].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[6].getElementsByTagName('td')[4].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[6].getElementsByTagName('td')[5].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[7].getElementsByTagName('td')[3].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[7].getElementsByTagName('td')[4].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[7].getElementsByTagName('td')[5].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[8].getElementsByTagName('td')[3].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[8].getElementsByTagName('td')[4].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[8].getElementsByTagName('td')[5].style.backgroundColor = 'blue';
+    }
+    if(activeBoard.id==8){
+        globalBoard.getElementsByTagName('tr')[6].getElementsByTagName('td')[6].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[6].getElementsByTagName('td')[7].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[6].getElementsByTagName('td')[8].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[7].getElementsByTagName('td')[6].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[7].getElementsByTagName('td')[7].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[7].getElementsByTagName('td')[8].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[8].getElementsByTagName('td')[6].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[8].getElementsByTagName('td')[7].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[8].getElementsByTagName('td')[8].style.backgroundColor = 'blue';
+    }
+    
 
+}
 function mainTableau(squareId, player){
-    console.log("square " + squareId)
-    console.log("activeBoard " + activeBoard.id)
     if(activeBoard.id==0){
         if(squareId==0 || squareId==1 || squareId==2){
         globalBoard.getElementsByTagName('tr')[0].getElementsByTagName('td')[squareId].innerText = player;
