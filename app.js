@@ -71,108 +71,23 @@ window.addEventListener("load", function(){
             activePlayer=Player1
         }; 
     }
-    function colorTableau(){
-        if(activeBoard.id==0){
-            globalBoard.getElementsByTagName('tr')[0].getElementsByTagName('td')[0].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[0].getElementsByTagName('td')[1].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[0].getElementsByTagName('td')[2].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[1].getElementsByTagName('td')[0].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[1].getElementsByTagName('td')[1].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[1].getElementsByTagName('td')[2].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[2].getElementsByTagName('td')[0].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[2].getElementsByTagName('td')[1].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[2].getElementsByTagName('td')[2].style.backgroundColor = 'blue';
+    function colorTableau() {
+        let startIdx = 0;
+        if(["3", "4", "5"].includes(activeBoard.id)) { // Si activeBoard.id = 3 OU 4 OU 5 ;)
+            startIdx = 3;
+        } else if(["6", "7", "8"].includes(activeBoard.id)){
+            startIdx = 6;
         }
-        if(activeBoard.id==1){
-            globalBoard.getElementsByTagName('tr')[0].getElementsByTagName('td')[3].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[0].getElementsByTagName('td')[4].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[0].getElementsByTagName('td')[5].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[1].getElementsByTagName('td')[3].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[1].getElementsByTagName('td')[4].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[1].getElementsByTagName('td')[5].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[2].getElementsByTagName('td')[3].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[2].getElementsByTagName('td')[4].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[2].getElementsByTagName('td')[5].style.backgroundColor = 'blue';
-        }
-        if(activeBoard.id==2){
-            globalBoard.getElementsByTagName('tr')[0].getElementsByTagName('td')[6].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[0].getElementsByTagName('td')[7].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[0].getElementsByTagName('td')[8].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[1].getElementsByTagName('td')[6].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[1].getElementsByTagName('td')[7].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[1].getElementsByTagName('td')[8].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[2].getElementsByTagName('td')[6].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[2].getElementsByTagName('td')[7].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[2].getElementsByTagName('td')[8].style.backgroundColor = 'blue';
-        }
-        if(activeBoard.id==3){
-            globalBoard.getElementsByTagName('tr')[3].getElementsByTagName('td')[0].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[3].getElementsByTagName('td')[1].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[3].getElementsByTagName('td')[2].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[4].getElementsByTagName('td')[0].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[4].getElementsByTagName('td')[1].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[4].getElementsByTagName('td')[2].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[5].getElementsByTagName('td')[0].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[5].getElementsByTagName('td')[1].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[5].getElementsByTagName('td')[2].style.backgroundColor = 'blue';
-        }
-        if(activeBoard.id==4){
-            globalBoard.getElementsByTagName('tr')[3].getElementsByTagName('td')[3].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[3].getElementsByTagName('td')[4].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[3].getElementsByTagName('td')[5].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[4].getElementsByTagName('td')[3].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[4].getElementsByTagName('td')[4].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[4].getElementsByTagName('td')[5].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[5].getElementsByTagName('td')[3].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[5].getElementsByTagName('td')[4].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[5].getElementsByTagName('td')[5].style.backgroundColor = 'blue';
-        }
-        if(activeBoard.id==5){
-            globalBoard.getElementsByTagName('tr')[3].getElementsByTagName('td')[6].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[3].getElementsByTagName('td')[7].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[3].getElementsByTagName('td')[8].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[4].getElementsByTagName('td')[6].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[4].getElementsByTagName('td')[7].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[4].getElementsByTagName('td')[8].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[5].getElementsByTagName('td')[6].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[5].getElementsByTagName('td')[7].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[5].getElementsByTagName('td')[8].style.backgroundColor = 'blue';
-        }
-        if(activeBoard.id==6){
-            globalBoard.getElementsByTagName('tr')[6].getElementsByTagName('td')[0].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[6].getElementsByTagName('td')[1].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[6].getElementsByTagName('td')[2].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[7].getElementsByTagName('td')[0].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[7].getElementsByTagName('td')[1].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[7].getElementsByTagName('td')[2].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[8].getElementsByTagName('td')[0].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[8].getElementsByTagName('td')[1].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[8].getElementsByTagName('td')[2].style.backgroundColor = 'blue';
-        }
-        if(activeBoard.id==7){
-            globalBoard.getElementsByTagName('tr')[6].getElementsByTagName('td')[3].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[6].getElementsByTagName('td')[4].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[6].getElementsByTagName('td')[5].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[7].getElementsByTagName('td')[3].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[7].getElementsByTagName('td')[4].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[7].getElementsByTagName('td')[5].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[8].getElementsByTagName('td')[3].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[8].getElementsByTagName('td')[4].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[8].getElementsByTagName('td')[5].style.backgroundColor = 'blue';
-        }
-        if(activeBoard.id==8){
-            globalBoard.getElementsByTagName('tr')[6].getElementsByTagName('td')[6].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[6].getElementsByTagName('td')[7].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[6].getElementsByTagName('td')[8].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[7].getElementsByTagName('td')[6].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[7].getElementsByTagName('td')[7].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[7].getElementsByTagName('td')[8].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[8].getElementsByTagName('td')[6].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[8].getElementsByTagName('td')[7].style.backgroundColor = 'blue';
-            globalBoard.getElementsByTagName('tr')[8].getElementsByTagName('td')[8].style.backgroundColor = 'blue';
-        }
-        
 
+        globalBoard.getElementsByTagName('tr')[startIdx].getElementsByTagName('td')[(activeBoard.id % 3) * 3].style.backgroundColor = 'blue'; // Ici on doit faire avec un MODULO (%3), c'est le reste de la division ;)
+        globalBoard.getElementsByTagName('tr')[startIdx].getElementsByTagName('td')[(activeBoard.id % 3) * 3 + 1].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[startIdx].getElementsByTagName('td')[(activeBoard.id % 3) * 3 + 2].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[startIdx + 1].getElementsByTagName('td')[(activeBoard.id % 3) * 3].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[startIdx + 1].getElementsByTagName('td')[(activeBoard.id % 3) * 3 + 1].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[startIdx + 1].getElementsByTagName('td')[(activeBoard.id % 3) * 3 + 2].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[startIdx + 2].getElementsByTagName('td')[(activeBoard.id % 3) * 3].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[startIdx + 2].getElementsByTagName('td')[(activeBoard.id % 3) * 3 + 1].style.backgroundColor = 'blue';
+        globalBoard.getElementsByTagName('tr')[startIdx + 2].getElementsByTagName('td')[(activeBoard.id % 3) * 3 + 2].style.backgroundColor = 'blue';
     }
     function mainTableau(squareId, player){
         if(activeBoard.id==0){
