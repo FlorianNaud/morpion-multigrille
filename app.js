@@ -1,7 +1,6 @@
 window.addEventListener("load", function(){
     var origBoard = []
     for(i=0; i<9;i++) {
-        // origBoard[i] = Array.from(Array(9).keys())
         origBoard[i] = Array(9)
     }
     const Player1 = 'O';
@@ -17,7 +16,7 @@ window.addEventListener("load", function(){
         [6,4,2]
     ]
     printActiveTable();
-
+    printGlobal();
     const allTableauCellElement = document.querySelectorAll(".cell");
 
     const replayElement=  document.querySelector("#replay");
@@ -345,7 +344,19 @@ window.addEventListener("load", function(){
             elTable.append(elTr);
         }
 
-        // document.getElementById("print-active-table").appendChild(elTable);
         document.getElementById("print-active-table").replaceChild(elTable, oldTable);
+    }
+    function printGlobal() {
+        let globalTable = document.getElementById("global");
+
+        for(let row=0; row<9; row++) {
+            let elTr = document.createElement('tr');
+            for(let col=0; col<9; col++) {
+                let elTd = document.createElement('td');
+                elTd.className = col;
+                elTr.append(elTd);
+            }
+            globalTable.append(elTr);
+        }
     }
 });
